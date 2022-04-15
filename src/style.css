@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap");
+
+body {
+  background: linear-gradient(90deg, rgb(29, 75, 204) 0%, rgb(212, 79, 201) 25%, rgba(236, 146, 19, 0.799) 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.Container {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+
+}
+
+.container {
+  background-color: white;
+  width: 28%;
+  min-width: 300px;
+  /* border: 1px solid #c4c4c4; */
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.yellow {
+  background-color: #ffdc40;
+  width: 100%;
+  height: 30px;
+  border-radius: 10px 10px 0 0;
+}
+
+.title {
+  font-style: normal;
+  text-shadow: 2px 1px #ffd931;
+  width: 100%;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: capitalize;
+  margin-top: 17px;
+  color: #df51c5;
+  font-family: roboto;
+  font-family: "Roboto", sans-serif;
+}
+
+.sortIconDiv {
+  width: 90%;
+  display: flex;
+  justify-content: end;
+}
+
+.sortIcon {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: end;
+}
+
+.sortIcon:hover {
+  fill: black;
+}
+
+#sort-btn {
+  border: none;
+  background-color: transparent;
+}
+
+
+.todoListParent {
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-left: 25px;
+  margin-right: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 10px 7px 5px rgb(177, 102, 226);
+}
+
+.listsLi {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 22px;
+  padding-right: 22px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.listİnputİtem {
+  width: 100%;
+  border: 0;
+
+}
+
+.listİnputİtem {
+  border: none;
+  outline: none;
+}
+
+.listİnputİtem:active {
+  border: none;
+  outline: none;
+}
+
+.listXIcon {
+  border-radius: 10px;
+  transition: 0.7s;
+  cursor: pointer;
+}
+
+.listXIcon:hover {
+  background-color: #b82fdb;
+
+
+}
+
+.buttonDiv {
+  margin: auto;
+  box-shadow: 2px 2px #692c7a;
+  width: 45%;
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  border: 20px;
+  background-color: rgba(212, 79, 201);
+  border-radius: 50px;
+  transition: all 0.7s;
+  margin-bottom: 30px;
+  cursor: pointer;
+
+}
+
+.buttonPlus {
+  background-color: rgba(233, 134, 225, 0.622);
+  padding: 12px;
+  padding-left: 18px;
+  padding-right: 18px;
+  border-radius: 80px;
+  color: white;
+}
+
+.buttonAdd {
+  color: white;
+  font-family: roboto;
+  font-family: "Roboto", sans-serif;
+  margin: auto;
+  padding-right: 23px;
+}
+
+.buttonDiv:hover {
+  background-color: #ffd931;
+  width: 60%;
+}
+
+
+.buttonAdd:hover {
+  color: #000000;
+}
+
+.title:hover {
+  color: #692c7a;
+  transition: 0.7s;
+}
+
+#sort-btn :hover * {
+  fill: black;
+}
+
+@media (max-width: 300px) {
+  .container {
+    width: 180px;
+
+  }
+
+  body {
+    background: linear-gradient(90deg, rgb(29, 75, 204) 0%, rgb(212, 79, 201) 25%, rgba(236, 146, 19, 0.799) 100%) no-repeat;
+  }
+}
