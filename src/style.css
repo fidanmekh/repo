@@ -19,7 +19,6 @@ body {
   background-color: white;
   width: 28%;
   min-width: 300px;
-  /* border: 1px solid #c4c4c4; */
   box-sizing: border-box;
   border-radius: 10px;
   margin: auto;
@@ -57,10 +56,11 @@ body {
   margin-top: 20px;
   margin-bottom: 10px;
   text-align: end;
+ 
 }
 
 .sortIcon:hover {
-  fill: black;
+  transition: 0.5s;
 }
 
 #sort-btn {
@@ -78,6 +78,7 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   box-shadow: 10px 7px 5px rgb(177, 102, 226);
+  padding-inline-start: 0; 
 }
 
 .listsLi {
@@ -178,4 +179,13 @@ body {
   body {
     background: linear-gradient(90deg, rgb(29, 75, 204) 0%, rgb(212, 79, 201) 25%, rgba(236, 146, 19, 0.799) 100%) no-repeat;
   }
+}
+.blackSwan{
+  width: 40px;
+  opacity: 0.4;
+  transition: 0.3s;
+}
+
+.blackSwan:hover{
+  opacity: 1;
 }

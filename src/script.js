@@ -87,30 +87,9 @@ class TodoService {
       .sort((t1, t2) =>
         t1.title.toUpperCase() > t2.title.toUpperCase() ? 1 : -1
       );
-    let buttonChange = document.querySelector("#sort-btn-svg");
     
     if (!direction) {
       todos.reverse();
-      buttonChange.innerHTML = `
-      <svg width="25" height="15" viewBox="0 0 25 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="2.5" width="2.5" height="12.5" fill="black"/>
-    <rect x="10" y="3.75" width="2.5" height="7.5" transform="rotate(-90 10 3.75)" fill="black"/>
-    <rect x="10" y="8.75" width="2.5" height="10" transform="rotate(-90 10 8.75)" fill="black"/>
-    <rect x="10" y="13.75" width="2.5" height="15" transform="rotate(-90 10 13.75)" fill="black"/>
-    <path d="M3.75 15L0.502405 10.3125L6.9976 10.3125L3.75 15Z" fill="black"/>
-    </svg>
-      `
-    }
-    else{
-      buttonChange.innerHTML = `
-    <svg width="25" height="15" viewBox="0 0 25 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="5" y="15" width="2.5" height="12.5" transform="rotate(-180 5 15)" fill="black"/>
-<rect x="10" y="3.75" width="2.5" height="7.5" transform="rotate(-90 10 3.75)" fill="black"/>
-<rect x="10" y="8.75" width="2.5" height="10" transform="rotate(-90 10 8.75)" fill="black"/>
-<rect x="10" y="13.75" width="2.5" height="15" transform="rotate(-90 10 13.75)" fill="black"/>
-<path d="M3.75 6.55671e-07L6.99759 4.6875L0.502404 4.6875L3.75 6.55671e-07Z" fill="black"/>
-</svg>
-    `
     }
     this._todos = todos;
     this._commit();
@@ -161,7 +140,7 @@ class TodoService {
     throw new Error(`There are no such todo with ${id} id.`);
   }
 }
-
+let blackSwan = document.getElementById("blackSwan");
 class DOMManipulator {
   /**
    * @private
@@ -183,7 +162,10 @@ class DOMManipulator {
     this._addBtn.addEventListener("click", (_) => this._handleAdd());
     /** @type {HTMLButtonElement} */
     this._sortBtn = this._getElement("#sort-btn");
-    this._sortBtn.addEventListener("click", (_) => this._handleSort());
+    this._sortBtn.addEventListener("click", (_) => {this._handleSort()
+      blackSwan.style.opacity="1"
+     
+    });
     this._sortDir = true;
 
     this.displayTodos();
@@ -243,9 +225,18 @@ class DOMManipulator {
   }
 
   _handleSort() {
+    const sortImg=document.querySelector(".blackSwan")
     this._service.sortTodos(this._sortDir);
     this._sortDir = !this._sortDir;
     this.displayTodos();
+    if(this._sortDir){
+      sortImg.src="./img/blackup.svg"
+
+    }
+    else if(!this._sortDir){
+      sortImg.src="./img/blackdown.svg"
+    }
+
   }
 
   _showError(message) {
@@ -271,4 +262,5 @@ class DOMManipulator {
 }
 
 const manipulator = new DOMManipulator(new TodoService([{ id: 1, title: "" }]));
+
 
